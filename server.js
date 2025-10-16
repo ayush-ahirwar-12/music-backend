@@ -10,12 +10,16 @@ const userRoutes = require("./src/routes/user.route");
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://music-backend-weld.vercel.app"],
+    origin: [
+      "https://music-frontend-x3cm.vercel.app", // ✅ your deployed frontend
+      "http://localhost:5173", // ✅ for local development
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-     allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(cookie());
