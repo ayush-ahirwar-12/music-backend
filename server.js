@@ -44,9 +44,9 @@ app.use((req, res, next) => {
 app.use("/api", songRoutes);
 app.use("/api/auth", userRoutes);
 
-app.listen(4000, () => {
-  console.log("server Connected");
-  // connecDb();
-});
+// app.listen(4000, () => {
+//   console.log("server Connected");
+//   // connecDb();
+// });
 
 module.exports = app;
